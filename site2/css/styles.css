@@ -831,10 +831,11 @@
   body.reading-mode .mw-parser-output a { color: var(--text); text-decoration: underline; text-decoration-color: #b9c6dd; } /* links discretos: menos distração */
   body.reading-mode .mw-parser-output a:hover { color: var(--link); }
 
-  /* Largura da coluna de texto FIXA (em rem, não em em) — não muda com o tamanho
-     da fonte. Assim, diminuir/aumentar o texto mantém a mesma largura de leitura. */
-  body .content__inner { max-width: 68rem; }
-  body .mw-parser-output { max-width: 60rem; }
+  /* Conteúdo ocupa a largura toda da área (infobox encosta à direita, texto
+     preenche o resto) — como na Wikipédia. A coluna estreita de conforto fica
+     só no Modo leitura. Largura independente do tamanho da fonte. */
+  body .content__inner { max-width: 100%; }
+  body .mw-parser-output { max-width: none; }
 
   /* Tema escuro (controle de leitura) */
   body.theme-dark {
