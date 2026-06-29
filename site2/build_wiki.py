@@ -144,7 +144,7 @@ TEMPLATE = """<!DOCTYPE html>
       <span class="rt-sep"></span>
       <span class="rt-group"><button data-act="font-dec" title="Diminuir texto">A−</button><button data-act="font-inc" title="Aumentar texto">A+</button></span>
       <span class="rt-sep"></span>
-      <button data-act="width" title="Largura de leitura">↔ Largura</button>
+      <span class="rt-group"><button data-act="width-dec" title="Diminuir largura do texto">↔−</button><button data-act="width-inc" title="Aumentar largura do texto">↔+</button></span>
       <button data-act="reading" title="Modo leitura / foco — esconde elementos que distraem">📖 Modo leitura</button>
     </div>
     <div id="navRail" class="nav-rail" aria-label="Navegação"></div>

@@ -831,9 +831,10 @@
   body.reading-mode .mw-parser-output a { color: var(--text); text-decoration: underline; text-decoration-color: #b9c6dd; } /* links discretos: menos distração */
   body.reading-mode .mw-parser-output a:hover { color: var(--link); }
 
-  /* Largura ampla opcional — solta o limite da coluna de texto, não só do container */
-  body.reading-wide .content__inner { max-width: 100%; }
-  body.reading-wide .mw-parser-output { max-width: none; }
+  /* Largura da coluna de texto controlada por níveis (botões ↔− / ↔+).
+     --reader-width default = 60em; o container externo acompanha. */
+  body .content__inner { max-width: calc(var(--reader-width, 60em) + 8em); }
+  body .mw-parser-output { max-width: var(--reader-width, 60em); }
 
   /* Tema escuro (controle de leitura) */
   body.theme-dark {
