@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/styles.css">
-<title>Protótipos — Redesign Wikipédia · IHC UnB 2026</title>
+<title>Protótipo — Redesign Wikipédia · IHC UnB 2026</title>
 <style>
-  .launcher { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+  .launcher { max-width: 980px; margin: 32px auto; padding: 0 20px; }
   .launcher h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin-bottom: 4px; }
-  .launcher .lead { color: var(--muted); margin-bottom: 24px; }
-  .start-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 18px 0 28px; }
+  .launcher .lead { color: var(--muted); margin-bottom: 22px; }
+  .start-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 18px 0 26px; }
   .start-bar a, .start-bar button {
     font-size: 0.9rem; padding: 9px 16px; border-radius: 2px; cursor: pointer; border: 1px solid var(--border);
     background: var(--bg); color: var(--text); text-decoration: none;
@@ -17,41 +17,110 @@
   .start-bar a.primary { background: #3366cc; border-color: #3366cc; color: #fff; }
   .start-bar a.primary:hover { background: #2a55a8; text-decoration: none; }
   .note { font-size: 0.85rem; color: var(--muted); }
-  .feat { border: 1px solid var(--border-soft); border-radius: 6px; padding: 16px 18px; margin-bottom: 14px; }
-  .feat h3 { font-family: Georgia, serif; font-weight: 400; margin: 0 0 6px; }
-  .feat .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #fff; background: #3366cc; border-radius: 10px; padding: 2px 8px; margin-bottom: 8px; }
-  .feat .tag.med { background: #806000; }
+  .h2 { font-family: Georgia, serif; font-weight: 400; font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-top: 30px; }
+
+  .change { border: 1px solid var(--border-soft); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+  .change__head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding: 12px 16px; background: var(--bg); border-bottom: 1px solid var(--border-faint); }
+  .change__head h3 { font-family: Georgia, serif; font-weight: 400; margin: 0; font-size: 1.15rem; }
+  .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #fff; background: #3366cc; border-radius: 10px; padding: 2px 8px; }
+  .tag.med { background: #806000; }
+  .tag.low { background: #54595d; }
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .ba > div { padding: 12px 16px; font-size: 0.875rem; }
+  .ba .before { background: #fdf3f3; border-right: 1px solid var(--border-faint); }
+  .ba .after { background: #f1f8f1; }
+  .ba .lbl { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+  .ba .before .lbl { color: #b32424; }
+  .ba .after .lbl { color: #14866d; }
+  .change__why { padding: 10px 16px; font-size: 0.82rem; color: var(--muted); background: #fff; border-top: 1px solid var(--border-faint); }
+  .change__why b { color: var(--text); }
+  @media (max-width: 640px) { .ba { grid-template-columns: 1fr; } .ba .before { border-right: 0; border-bottom: 1px solid var(--border-faint); } }
 </style>
 </head>
 <body>
 <div class="launcher">
-  <h1>Protótipos de validação — Redesign da Wikipédia</h1>
-  <p class="lead">Caminhada IHC · UnB 2026/1 · Fase 5 — entrevista de UX. Navegue pelas telas e compare <strong>Original × Redesign</strong> pelo botão no canto inferior direito.</p>
+  <h1>Protótipo de validação — Redesign da Wikipédia</h1>
+  <p class="lead">Caminhada IHC · UnB 2026/1 · Fase 5 — entrevista de UX. Cada alteração abaixo mostra <strong>como era (antes)</strong> e <strong>como ficou (depois)</strong>, com a evidência da pesquisa (n = 72). Compare ao vivo pelo botão <strong>Original × Redesign</strong> no canto inferior direito de qualquer artigo.</p>
 
   <div class="start-bar">
-    <a class="primary" href="wiki/Futebol.html" id="startBtn">▶ Começar entrevista (conteúdo real · limpa a trilha)</a>
+    <a class="primary" href="wiki/Futebol.html" id="startBtn">▶ Começar entrevista (limpa a trilha)</a>
     <a href="wiki/index.html">Índice dos 43 artigos reais</a>
     <button id="resetBtn">Limpar histórico e telemetria</button>
   </div>
 
-  <p class="note">Conteúdo real importado da Wikipédia: <strong>43 artigos interligados</strong>, todos os links azuis abrem páginas deste protótipo. Fluxo sugerido: <strong>Futebol → Rugby → Winchester College</strong> (ou clique livre), depois use a <em>trilha de histórico</em> para voltar.<br>
-  <small>Demo enxuta antiga (3 telas resumidas): <a href="esportes.html">Esportes → Futebol → Copa</a>.</small></p>
+  <p class="note"><strong>43 artigos reais</strong> da Wikipédia, interligados — todos os links azuis abrem páginas do protótipo. Fluxo sugerido: <strong>Futebol → Rugby → Winchester College</strong>, depois use a trilha de histórico para voltar.</p>
 
-  <h2 style="font-family:Georgia,serif;font-weight:400;border-bottom:1px solid var(--border);padding-bottom:4px;margin-top:28px;">Navegações criadas (foco da entrevista)</h2>
+  <h2 class="h2">O que foi alterado — antes × depois</h2>
 
-  <div class="feat">
-    <span class="tag">Prioridade máxima · H2 / Q11</span>
-    <h3>1. Trilha de histórico — "voltar entre os links"</h3>
-    <p>Barra azul que registra <strong>onde você esteve e para onde chegou</strong>, na ordem real dos cliques, com botão <strong>← Voltar</strong>. Persiste entre páginas (localStorage). Responde diretamente a Q11 (2,89 — confirmada) e aos 44,3% da pergunta aberta que citam falta de orientação.</p>
+  <!-- 1 -->
+  <div class="change">
+    <div class="change__head"><span class="tag">Prioridade máxima</span><h3>1. Trilha de histórico — "voltar entre os links"</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Para voltar a um artigo já visto, só o botão do navegador ou refazer a busca. Sem registro visível do caminho percorrido.</div>
+      <div class="after"><div class="lbl">Depois</div>Barra azul "↩ Você navegou por" registra a ordem real dos cliques, marca "você está aqui" e tem botão <strong>← Voltar</strong>. Persiste entre páginas.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> Q11 (retornar sem memorizar) = <b>2,89 — confirmada</b> · <b>44,3%</b> da pergunta aberta citam falta de orientação (maior categoria). Heurística <b>H2</b>.</div>
   </div>
 
-  <div class="feat">
-    <span class="tag med">Apoio · contexto macro</span>
-    <h3>2. Categorias — onde isto se encaixa</h3>
-    <p>Trilha hierárquica (Esportes › Futebol › Copa do Mundo FIFA) para situar o assunto em temas mais amplos. Complementa a localização espacial pedida na pesquisa.</p>
+  <!-- 2 -->
+  <div class="change">
+    <div class="change__head"><span class="tag med">Apoio</span><h3>2. Categorias — onde o assunto se encaixa</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Nenhum breadcrumb. O único indício de localização era o título do artigo no topo.</div>
+      <div class="after"><div class="lbl">Depois</div>Trilha hierárquica "🗂 Categorias" (ex.: Esportes › Futebol › Copa do Mundo FIFA), situando o tema em assuntos mais amplos.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> Q10 (mostra onde estou) = 3,01 · "zero breadcrumbs" na inspeção. Heurística <b>H2</b>.</div>
   </div>
 
-  <p class="note">Estrutura inspirada no projeto <a href="https://github.com/Vitor-Trancoso/ihc-spotify">ihc-spotify</a>: galeria de telas, comparação controle×redesign e telemetria (<code>WIKITELE.dump()</code> no console).</p>
+  <!-- 3 -->
+  <div class="change">
+    <div class="change__head"><span class="tag med">Orientação na página</span><h3>3. Progresso + seção atual (scrollspy)</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Em artigos longos, nenhuma indicação de quanto falta nem de qual seção se está lendo.</div>
+      <div class="after"><div class="lbl">Depois</div>Barra de progresso no topo + índice lateral "Conteúdo desta página" que <strong>destaca a seção atual</strong> conforme a rolagem.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> Q10 foi a questão <b>mais polarizada</b> (DP 1,25) — metade não se localiza. Resolve o "onde estou" <i>dentro</i> do artigo. Heurística <b>H2</b>.</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="change">
+    <div class="change__head"><span class="tag med">Foco / poluição</span><h3>4. Modo leitura</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Sidebar, infobox, figuras e dezenas de links disputam atenção com o texto.</div>
+      <div class="after"><div class="lbl">Depois</div>Botão <strong>📖 Modo leitura</strong> recolhe o que distrai, deixa os links discretos e centraliza o texto numa coluna confortável.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> "excesso de links / poluição visual" = <b>12,9%</b> da pergunta aberta (2º maior problema). Heurística <b>H3</b>.</div>
+  </div>
+
+  <!-- 5 -->
+  <div class="change">
+    <div class="change__head"><span class="tag med">Ajuda no momento</span><h3>5. Pré-visualização de links (hovercards)</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Para saber do que trata um link, era preciso clicar e abrir a página (e às vezes voltar).</div>
+      <div class="after"><div class="lbl">Depois</div>Ao passar o mouse num link interno, um card mostra <strong>resumo + foto</strong> do artigo de destino, ajudando a decidir antes de clicar.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> Q18 (dica no momento da tarefa) = <b>2,89 — confirmada</b>; leitores casuais os mais afetados (2,84). Heurística <b>H4</b>.</div>
+  </div>
+
+  <!-- 6 -->
+  <div class="change">
+    <div class="change__head"><span class="tag low">Conforto</span><h3>6. Controles de leitura — tema escuro, texto, largura</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Antes</div>Tema claro fixo; ajustes de aparência escondidos no menu lateral; sem modo escuro.</div>
+      <div class="after"><div class="lbl">Depois</div>Barra com <strong>🌙 Tema</strong>, <strong>A− / A+</strong> e <strong>↔ Largura</strong>, visíveis e com preferência salva.</div>
+    </div>
+    <div class="change__why"><b>Por quê:</b> pedido de <b>modo escuro</b> (10% "outros") · Q15 (conforto de leitura) = <b>3,82</b>, a melhor avaliada — amplifica a maior força do site. Heurística <b>H3</b>.</div>
+  </div>
+
+  <!-- 7 -->
+  <div class="change">
+    <div class="change__head"><span class="tag low">Comparação</span><h3>7. Alternar Original × Redesign</h3></div>
+    <div class="ba">
+      <div class="before"><div class="lbl">Original</div>Esconde todos os recursos acima — a página fica como a Wikipédia atual.</div>
+      <div class="after"><div class="lbl">Redesign</div>Mostra todas as melhorias. Botão fixo no canto inferior direito alterna entre os dois na mesma tela.</div>
+    </div>
+    <div class="change__why"><b>Para quê:</b> permite ao entrevistado comparar as duas experiências sem trocar de aba. A telemetria registra os cliques para a análise.</div>
+  </div>
 </div>
 
 <script src="../js/telemetria.js"></script>
