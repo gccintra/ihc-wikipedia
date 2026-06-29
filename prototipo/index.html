@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protótipos — Redesign Wikipédia · IHC UnB 2026</title>
+<link rel="stylesheet" href="css/wikipedia.css">
+<style>
+  .launcher { max-width: 760px; margin: 40px auto; padding: 0 24px; }
+  .launcher h1 { font-family: var(--font-serif); font-weight: normal; }
+  .card { border: 1px solid var(--color-border-subtle); border-radius: 6px; padding: 16px 20px; margin-bottom: 14px; }
+  .card h3 { margin: 0 0 4px; font-family: var(--font-serif); font-weight: normal; }
+  .card .tags { font-size: 0.75rem; color: var(--color-subtle); margin-top: 6px; }
+  .card a.go { display: inline-block; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="launcher">
+  <h1>Protótipos de validação — Redesign da Wikipédia</h1>
+  <p class="vec-subtitle">Caminhada IHC · UnB 2026/1 · Fase 5 — Entrevista de UX comparando interface original e protótipo.</p>
+
+  <div class="card">
+    <h3>📄 Artigo (Madonna)</h3>
+    <p>Página de leitura com breadcrumb, toolbar condicional ao perfil, tooltip de edição, banner de onboarding e FAB de ajuda.</p>
+    <div class="tags">Componentes: S2.1 · S3.1 · Ajuda contextual · S1.1</div>
+    <a class="go" href="artigo.html">Abrir protótipo →</a>
+  </div>
+
+  <div class="card">
+    <h3>💬 Página de Discussão</h3>
+    <p>Boilerplate colapsável, threads com hierarquia e avatares, CTA "+ Adicionar tópico", sidebar técnica removida.</p>
+    <div class="tags">Componentes: S3.2 · S2.1</div>
+    <a class="go" href="discussao.html">Abrir protótipo →</a>
+  </div>
+
+  <div class="card">
+    <h3>❓ Central de Ajuda</h3>
+    <p>Destino dos links de ajuda contextual — onboarding e instruções por tarefa.</p>
+    <div class="tags">Componentes: H4 (escopo reduzido)</div>
+    <a class="go" href="ajuda.html">Abrir protótipo →</a>
+  </div>
+
+  <p style="font-size:0.8125rem;color:var(--color-subtle);margin-top:24px;">
+    Veja <code>README.md</code> (decisões de design) e <code>ROTEIRO-ENTREVISTA.md</code> (tarefas e perguntas) na pasta do projeto.
+  </p>
+</div>
+</body>
+</html>

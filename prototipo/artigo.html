@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madonna – Wikipédia, a enciclopédia livre</title>
+<link rel="stylesheet" href="css/wikipedia.css">
+</head>
+<body>
+
+<!-- ===== Header global Vector 2022 ===== -->
+<header class="vec-header">
+  <button class="menu-btn" title="Menu principal">☰</button>
+  <div class="vec-logo">
+    <div class="globe">W</div>
+    <div class="wordmark">WIKIPÉDIA<small>A enciclopédia livre</small></div>
+  </div>
+  <div class="vec-search">
+    <span class="icon">🔍</span>
+    <input type="text" placeholder="Buscar na Wikipédia" aria-label="Buscar">
+  </div>
+  <div class="auth">
+    <!-- alterna o perfil para demonstrar a toolbar condicional (S3.1) -->
+    <div class="profile-toggle">
+      <label><input type="checkbox" id="loginToggle"> Simular usuário logado</label>
+    </div>
+    <a href="#" id="authLink">Criar conta</a>
+    <a href="#">Entrar</a>
+  </div>
+</header>
+
+<div class="vec-body">
+  <!-- ===== Sidebar Vector 2022 ===== -->
+  <nav class="vec-sidebar">
+    <h3>Navegação</h3>
+    <ul>
+      <li><a href="#">Página principal</a></li>
+      <li><a href="#">Conteúdo destacado</a></li>
+      <li><a href="#">Eventos atuais</a></li>
+      <li><a href="#">Esplanada</a></li>
+      <li><a href="#">Página aleatória</a></li>
+    </ul>
+    <h3>Colaboração</h3>
+    <ul>
+      <li><a href="ajuda.html">Ajuda</a></li>
+      <li><a href="#">Mudanças recentes</a></li>
+      <li><a href="#">Páginas especiais</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Conteúdo ===== -->
+  <main class="vec-content">
+
+    <!-- REDESIGN S2.1 — Breadcrumb por categorias do Wikidata (prioridade MÁXIMA) -->
+    <nav class="breadcrumb" aria-label="Trilha de navegação">
+      <a href="#">Início</a><span class="sep">›</span>
+      <a href="#">Cultura</a><span class="sep">›</span>
+      <a href="#">Música</a><span class="sep">›</span>
+      <a href="#">Cantores</a><span class="sep">›</span>
+      <span class="here" aria-current="page">Madonna</span>
+    </nav>
+
+    <!-- Abas de namespace + ações (toolbar condicional S3.1) -->
+    <div class="vec-tabs">
+      <div class="ns">
+        <button class="vec-tab active">Artigo</button>
+        <a class="vec-tab" href="discussao.html">Discussão</a>
+      </div>
+      <div class="actions" id="actionToolbar">
+        <button class="vec-tab active">Ler</button>
+        <!-- REDESIGN S1.1: label sempre "Editar"; proteção comunicada por estado visual -->
+        <span style="position:relative;">
+          <button class="btn btn-primary" id="editBtn">Editar</button>
+          <!-- Ajuda contextual: tooltip de 3 passos (resposta a Q18 confirmada) -->
+          <div class="tooltip-pop" id="editTooltip">
+            <button class="close" id="tipClose">×</button>
+            <h4>Como editar um artigo</h4>
+            <ol>
+              <li>Clique no trecho que deseja alterar.</li>
+              <li>Escreva sua contribuição com fonte confiável.</li>
+              <li>Clique em <strong>Publicar alterações</strong>.</li>
+            </ol>
+            <a href="ajuda.html">Ver guia completo de edição →</a>
+          </div>
+        </span>
+        <button class="btn">Histórico</button>
+        <!-- Ferramentas técnicas escondidas sob demanda (98% só leem) -->
+        <div class="tools-menu" id="toolsMenu">
+          <button class="btn" id="toolsBtn" title="Mais ferramentas">···</button>
+          <div class="dropdown">
+            <div class="group">Ferramentas técnicas</div>
+            <a href="#">Páginas afluentes</a>
+            <a href="#">Hiperligação permanente</a>
+            <a href="#">Alterações relacionadas</a>
+            <a href="#">Informações da página</a>
+            <a href="#">Citar esta página</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner de onboarding (visitante novo) — ajuda proativa -->
+    <div class="onboarding" id="onboarding">
+      <span class="ico">👋</span>
+      <div class="txt">
+        <strong>Primeira vez por aqui?</strong>
+        Veja em 2 minutos como navegar e ler artigos na Wikipédia.
+      </div>
+      <button class="btn btn-primary" id="onbStart">Começar tour</button>
+      <button class="dismiss" id="onbClose" title="Dispensar">×</button>
+    </div>
+
+    <h1 class="vec-title">Madonna</h1>
+    <p class="vec-subtitle">
+      Origem: Wikipédia, a enciclopédia livre.
+      <span class="protect-note" title="Esta página é protegida contra edição por usuários não confirmados">🔒 Página semiprotegida</span>
+    </p>
+
+    <!-- Infobox padrão -->
+    <aside class="infobox">
+      <div class="ib-title">Madonna</div>
+      <div class="ib-img"><div class="ph">[ retrato ]</div></div>
+      <table>
+        <tr><th>Nome completo</th><td>Madonna Louise Ciccone</td></tr>
+        <tr><th>Nascimento</th><td>16 de agosto de 1958 (67 anos)<br>Bay City, Michigan, EUA</td></tr>
+        <tr><th>Ocupação</th><td>Cantora, compositora, atriz</td></tr>
+        <tr><th>Gênero</th><td>Pop, dance, eletrônico</td></tr>
+        <tr><th>Período</th><td>1979–presente</td></tr>
+      </table>
+    </aside>
+
+    <p><strong>Madonna Louise Ciccone</strong> (Bay City, 16 de agosto de 1958) é uma
+    cantora, compositora, produtora musical e atriz norte-americana. Referida como a
+    "Rainha do Pop", é reconhecida por sua reinvenção contínua e versatilidade na
+    produção musical, composição e apresentação visual.</p>
+
+    <p>Madonna ultrapassou os limites da composição lírica na música popular e por
+    suas imagens, muitas vezes controversas, que foram exibidas em vídeos musicais e
+    apresentações ao vivo. Ela alcançou popularidade ao ultrapassar fronteiras
+    socioculturais, ressaltando temas políticos, sexuais e religiosos em seu trabalho.</p>
+
+    <h2>Biografia <span class="editsection">[<a href="#" class="edit-inline">editar</a>]</span></h2>
+    <p>Madonna mudou-se para Nova York em 1978 para seguir uma carreira na dança
+    moderna. Depois de atuar como baterista, guitarrista e vocalista das bandas de
+    rock Breakfast Club e Emmy, assinou contrato com a Sire Records em 1982 e lançou
+    seu álbum de estreia homônimo no ano seguinte.</p>
+
+    <h2>Carreira musical <span class="editsection">[<a href="#" class="edit-inline">editar</a>]</span></h2>
+    <p>Ela seguiu com uma série de álbuns bem-sucedidos, incluindo as obras aclamadas
+    pela crítica e comercialmente <i>Like a Virgin</i> (1984) e <i>True Blue</i> (1986),
+    bem como <i>Like a Prayer</i> (1989). Ao longo de sua carreira, Madonna escreveu e
+    produziu a maioria de suas músicas.</p>
+
+    <h2>Legado <span class="editsection">[<a href="#" class="edit-inline">editar</a>]</span></h2>
+    <p>Considerada uma das figuras mais influentes da cultura popular contemporânea,
+    Madonna continua sendo objeto de análise acadêmica e referência para artistas de
+    gerações posteriores.</p>
+  </main>
+</div>
+
+<!-- FAB de ajuda persistente "?" -->
+<button class="fab-help" id="fabHelp" title="Ajuda">?</button>
+<div class="fab-panel" id="fabPanel">
+  <h4>Precisa de ajuda?</h4>
+  <ul>
+    <li><a href="ajuda.html">Como ler e navegar</a></li>
+    <li><a href="ajuda.html">Como editar um artigo</a></li>
+    <li><a href="ajuda.html">Entender as categorias</a></li>
+    <li><a href="discussao.html">Participar da discussão</a></li>
+  </ul>
+</div>
+
+<script src="js/prototipo.js"></script>
+</body>
+</html>

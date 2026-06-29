@@ -1,0 +1,75 @@
+/* Ajustes para o HTML real importado da Wikipédia caber no template Vector 2022.
+   Esconde "cruft" (edição, refs, navboxes) e controla imagens/tabelas. */
+
+/* esconde elementos que não fazem sentido no protótipo */
+.mw-editsection,
+.reference,
+.mw-references-wrap,
+.reflist,
+.noprint,
+.navbox,
+.vertical-navbox,
+.navbox-styles,
+.metadata,
+.mw-empty-elt,
+.printfooter,
+.mw-jump-link:not(:focus),
+.sistersitebox,
+.side-box,
+.ambox,
+.hatnote .selflink,
+#toc,
+.toc,
+style { display: none !important; }
+
+/* tipografia/coluna de leitura */
+.mw-parser-output { max-width: 60em; }
+.mw-parser-output p { margin: 0.7em 0; }
+.mw-parser-output ul, .mw-parser-output ol { margin: 0.5em 0 0.8em 1.6em; }
+.mw-parser-output li { margin: 0.2em 0; }
+
+.mw-parser-output h2,
+.mw-parser-output h3,
+.mw-parser-output h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400; line-height: 1.25;
+  margin: 1.3em 0 0.4em; padding-bottom: 2px; clear: both;
+}
+.mw-parser-output h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border); }
+.mw-parser-output h3 { font-size: 1.15rem; }
+.mw-parser-output h4 { font-size: 1rem; font-style: italic; }
+
+/* imagens / thumbs */
+.mw-parser-output img { max-width: 100%; height: auto; }
+.mw-parser-output figure,
+.mw-parser-output .thumb {
+  max-width: 320px; margin: 0.4em 0 0.8em 1.2em; float: right;
+  background: #f8f9fa; border: 1px solid var(--border-faint); padding: 4px;
+  font-size: 0.78rem; color: var(--muted);
+}
+.mw-parser-output figure { clear: right; }
+.mw-parser-output .thumbcaption, .mw-parser-output figcaption { padding: 4px 2px 0; }
+
+/* infobox real da wiki */
+.mw-parser-output .infobox {
+  float: right; clear: right; width: 22em; margin: 0 0 1em 1.25em;
+  border: 1px solid var(--border); background: #f8f9fa;
+  border-collapse: collapse; font-size: 0.82rem; line-height: 1.45;
+}
+.mw-parser-output .infobox caption,
+.mw-parser-output .infobox th[colspan],
+.mw-parser-output .infobox-title {
+  background: #eaecf0; font-weight: 700; text-align: center; padding: 0.5em;
+}
+.mw-parser-output .infobox td, .mw-parser-output .infobox th {
+  padding: 0.3em 0.5em; vertical-align: top; text-align: left;
+}
+
+/* tabelas wikitable já estilizadas em styles.css; reforço de largura */
+.mw-parser-output table.wikitable { font-size: 0.8rem; }
+
+@media (max-width: 900px) {
+  .mw-parser-output .infobox,
+  .mw-parser-output figure,
+  .mw-parser-output .thumb { float: none; width: 100%; margin: 0.8em 0; }
+}

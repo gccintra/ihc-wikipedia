@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/styles.css">
+<title>Protótipos — Redesign Wikipédia · IHC UnB 2026</title>
+<style>
+  .launcher { max-width: 900px; margin: 32px auto; padding: 0 20px; }
+  .launcher h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin-bottom: 4px; }
+  .launcher .lead { color: var(--muted); margin-bottom: 24px; }
+  .start-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 18px 0 28px; }
+  .start-bar a, .start-bar button {
+    font-size: 0.9rem; padding: 9px 16px; border-radius: 2px; cursor: pointer; border: 1px solid var(--border);
+    background: var(--bg); color: var(--text); text-decoration: none;
+  }
+  .start-bar a.primary { background: #3366cc; border-color: #3366cc; color: #fff; }
+  .start-bar a.primary:hover { background: #2a55a8; text-decoration: none; }
+  .note { font-size: 0.85rem; color: var(--muted); }
+  .feat { border: 1px solid var(--border-soft); border-radius: 6px; padding: 16px 18px; margin-bottom: 14px; }
+  .feat h3 { font-family: Georgia, serif; font-weight: 400; margin: 0 0 6px; }
+  .feat .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; color: #fff; background: #3366cc; border-radius: 10px; padding: 2px 8px; margin-bottom: 8px; }
+  .feat .tag.med { background: #806000; }
+</style>
+</head>
+<body>
+<div class="launcher">
+  <h1>Protótipos de validação — Redesign da Wikipédia</h1>
+  <p class="lead">Caminhada IHC · UnB 2026/1 · Fase 5 — entrevista de UX. Navegue pelas telas e compare <strong>Original × Redesign</strong> pelo botão no canto inferior direito.</p>
+
+  <div class="start-bar">
+    <a class="primary" href="wiki/Futebol.html" id="startBtn">▶ Começar entrevista (conteúdo real · limpa a trilha)</a>
+    <a href="wiki/index.html">Índice dos 43 artigos reais</a>
+    <button id="resetBtn">Limpar histórico e telemetria</button>
+  </div>
+
+  <p class="note">Conteúdo real importado da Wikipédia: <strong>43 artigos interligados</strong>, todos os links azuis abrem páginas deste protótipo. Fluxo sugerido: <strong>Futebol → Rugby → Winchester College</strong> (ou clique livre), depois use a <em>trilha de histórico</em> para voltar.<br>
+  <small>Demo enxuta antiga (3 telas resumidas): <a href="esportes.html">Esportes → Futebol → Copa</a>.</small></p>
+
+  <h2 style="font-family:Georgia,serif;font-weight:400;border-bottom:1px solid var(--border);padding-bottom:4px;margin-top:28px;">Navegações criadas (foco da entrevista)</h2>
+
+  <div class="feat">
+    <span class="tag">Prioridade máxima · H2 / Q11</span>
+    <h3>1. Trilha de histórico — "voltar entre os links"</h3>
+    <p>Barra azul que registra <strong>onde você esteve e para onde chegou</strong>, na ordem real dos cliques, com botão <strong>← Voltar</strong>. Persiste entre páginas (localStorage). Responde diretamente a Q11 (2,89 — confirmada) e aos 44,3% da pergunta aberta que citam falta de orientação.</p>
+  </div>
+
+  <div class="feat">
+    <span class="tag med">Apoio · contexto macro</span>
+    <h3>2. Categorias — onde isto se encaixa</h3>
+    <p>Trilha hierárquica (Esportes › Futebol › Copa do Mundo FIFA) para situar o assunto em temas mais amplos. Complementa a localização espacial pedida na pesquisa.</p>
+  </div>
+
+  <p class="note">Estrutura inspirada no projeto <a href="https://github.com/Vitor-Trancoso/ihc-spotify">ihc-spotify</a>: galeria de telas, comparação controle×redesign e telemetria (<code>WIKITELE.dump()</code> no console).</p>
+</div>
+
+<script src="../js/telemetria.js"></script>
+<script>
+  function clearAll() {
+    localStorage.removeItem('wiki_nav_history');
+    if (window.WIKITELE) window.WIKITELE.reset();
+  }
+  document.getElementById('startBtn').addEventListener('click', clearAll);
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    clearAll();
+    this.textContent = 'Histórico e telemetria limpos ✓';
+  });
+</script>
+</body>
+</html>

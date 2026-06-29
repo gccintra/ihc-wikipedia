@@ -1,0 +1,214 @@
+/* ============================================================
+   Design System — Wikipedia Vector 2022 (recriado)
+   Tokens extraídos da skin Vector 2022 (pt.wikipedia.org).
+   Alteracoes do redesign marcadas com comentarios "REDESIGN".
+   ============================================================ */
+
+:root {
+  /* Cores Vector 2022 (Codex design tokens) */
+  --color-base:        #202122;  /* texto principal */
+  --color-subtle:      #54595d;  /* texto secundário */
+  --color-link:        #3366cc;  /* azul de link padrão */
+  --color-link-visited:#795cb2;
+  --color-link-red:    #d33;     /* link de página inexistente */
+  --color-border:      #a2a9b1;  /* bordas de seção */
+  --color-border-subtle:#c8ccd1;
+  --bg-page:           #ffffff;
+  --bg-subtle:         #f8f9fa;  /* sidebar / caixas */
+  --bg-interactive:    #eaecf0;
+  --color-progressive: #36c;     /* botão primário Codex */
+  --color-progressive-hover:#447ff5;
+
+  /* Tipografia Vector 2022 */
+  --font-sans: -apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Linux Libertine", "Georgia", "Times", serif;  /* títulos */
+  --font-size-base: 0.875rem;   /* 14px corpo */
+  --line-height-base: 1.6;
+  --content-max: 960px;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-base);
+  background: var(--bg-page);
+}
+
+a { color: var(--color-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a.new { color: var(--color-link-red); }
+
+/* ---------- Header global Vector 2022 ---------- */
+.vec-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  position: sticky; top: 0; background: var(--bg-page); z-index: 50;
+}
+.vec-header .menu-btn {
+  font-size: 18px; background: none; border: none; cursor: pointer;
+  padding: 6px 10px; border-radius: 2px; color: var(--color-base);
+}
+.vec-header .menu-btn:hover { background: var(--bg-interactive); }
+.vec-logo { display: flex; align-items: center; gap: 8px; }
+.vec-logo .globe {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff 0 20%, #e6e6e6 21% 100%);
+  border: 1px solid #c8ccd1; display: grid; place-items: center;
+  font-family: var(--font-serif); font-size: 22px; color: #54595d;
+}
+.vec-logo .wordmark { font-family: var(--font-serif); font-size: 16px; line-height: 1.1; }
+.vec-logo .wordmark small { display: block; font-size: 9px; color: var(--color-subtle); }
+
+.vec-search { flex: 1; max-width: 500px; position: relative; }
+.vec-search input {
+  width: 100%; padding: 7px 10px 7px 34px;
+  border: 1px solid var(--color-border); border-radius: 2px;
+  font-size: 14px; background: var(--bg-page);
+}
+.vec-search input:focus { outline: none; border-color: var(--color-progressive); box-shadow: inset 0 0 0 1px var(--color-progressive); }
+.vec-search .icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--color-subtle); }
+.vec-header .auth { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.vec-header .auth a { padding: 6px 8px; }
+
+/* ---------- Layout 2 colunas ---------- */
+.vec-body { display: flex; max-width: 1440px; margin: 0 auto; }
+.vec-sidebar {
+  width: 176px; flex-shrink: 0; padding: 16px 12px;
+  font-size: 0.8125rem; border-right: 1px solid var(--bg-interactive);
+}
+.vec-sidebar h3 { font-size: 0.75rem; color: var(--color-subtle); font-weight: normal; text-transform: none; margin: 16px 0 4px; }
+.vec-sidebar ul { list-style: none; padding: 0; margin: 0 0 8px; }
+.vec-sidebar li { padding: 3px 0; }
+.vec-content { flex: 1; min-width: 0; padding: 12px 32px 64px; max-width: var(--content-max); }
+
+/* ---------- Abas de namespace + ações (toolbar) ---------- */
+.vec-tabs {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  border-bottom: 1px solid var(--color-border); margin-bottom: 4px; gap: 12px; flex-wrap: wrap;
+}
+.vec-tabs .ns, .vec-tabs .actions { display: flex; gap: 2px; align-items: flex-end; }
+.vec-tab {
+  padding: 6px 12px; font-size: 0.8125rem; color: var(--color-link);
+  border: 1px solid transparent; border-bottom: none; cursor: pointer; background: none;
+}
+.vec-tab.active {
+  color: var(--color-base); background: var(--bg-page);
+  border-color: var(--color-border); border-bottom: 1px solid var(--bg-page);
+  margin-bottom: -1px; border-radius: 2px 2px 0 0;
+}
+.vec-tab:hover:not(.active) { text-decoration: underline; }
+
+/* botão primário Codex (REDESIGN: "Editar" vira botão progressivo claro) */
+.btn { font-family: var(--font-sans); font-size: 0.8125rem; cursor: pointer; border-radius: 2px; padding: 6px 12px; border: 1px solid var(--color-border); background: var(--bg-page); color: var(--color-base); }
+.btn:hover { background: var(--bg-interactive); }
+.btn-primary { background: var(--color-progressive); border-color: var(--color-progressive); color: #fff; }
+.btn-primary:hover { background: var(--color-progressive-hover); border-color: var(--color-progressive-hover); }
+.btn-disabled { color: #72777d; background: var(--bg-interactive); border-color: var(--color-border-subtle); cursor: not-allowed; }
+.btn .lock { font-size: 12px; }
+
+/* menu "···" de ferramentas técnicas */
+.tools-menu { position: relative; }
+.tools-menu .dropdown {
+  position: absolute; right: 0; top: 100%; margin-top: 2px; min-width: 220px;
+  background: var(--bg-page); border: 1px solid var(--color-border); border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15); padding: 4px 0; display: none; z-index: 40;
+}
+.tools-menu.open .dropdown { display: block; }
+.tools-menu .dropdown a { display: block; padding: 6px 14px; color: var(--color-base); font-size: 0.8125rem; }
+.tools-menu .dropdown a:hover { background: var(--bg-interactive); text-decoration: none; }
+.tools-menu .dropdown .group { font-size: 0.6875rem; color: var(--color-subtle); padding: 6px 14px 2px; text-transform: uppercase; letter-spacing: .03em; }
+
+/* ---------- Título + conteúdo do artigo ---------- */
+.vec-title { font-family: var(--font-serif); font-size: 1.75rem; font-weight: normal; border-bottom: 1px solid var(--color-border); padding-bottom: 4px; margin: 8px 0 4px; }
+.vec-subtitle { color: var(--color-subtle); font-size: 0.8125rem; margin-bottom: 16px; }
+.vec-content h2 { font-family: var(--font-serif); font-size: 1.5rem; font-weight: normal; border-bottom: 1px solid var(--color-border); padding-bottom: 4px; margin: 24px 0 12px; }
+.vec-content h2 .editsection { font-family: var(--font-sans); font-size: 0.75rem; float: right; font-weight: normal; }
+.vec-content p { margin: 0 0 12px; }
+.infobox {
+  float: right; width: 250px; margin: 0 0 16px 16px; border: 1px solid var(--color-border-subtle);
+  background: var(--bg-subtle); font-size: 0.8125rem;
+}
+.infobox .ib-title { background: var(--bg-interactive); font-weight: bold; text-align: center; padding: 8px; font-family: var(--font-serif); }
+.infobox .ib-img { padding: 8px; text-align: center; }
+.infobox .ib-img .ph { background: #ccc; height: 180px; display: grid; place-items: center; color: #666; }
+.infobox table { width: 100%; border-collapse: collapse; }
+.infobox th, .infobox td { text-align: left; padding: 4px 8px; vertical-align: top; border-top: 1px solid var(--color-border-subtle); }
+.infobox th { width: 38%; color: var(--color-subtle); }
+
+/* ============================================================
+   REDESIGN — componentes novos (justificados na pesquisa)
+   ============================================================ */
+
+/* S2.1 Breadcrumb — prioridade MÁXIMA (Q11 + 44,3% pergunta aberta) */
+.breadcrumb {
+  font-size: 0.8125rem; color: var(--color-subtle);
+  padding: 6px 0; margin-bottom: 2px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center;
+}
+.breadcrumb a { color: var(--color-link); }
+.breadcrumb .sep { color: var(--color-border); }
+.breadcrumb .here { color: var(--color-base); font-weight: bold; }   /* "você está aqui" */
+
+/* Ajuda contextual — tooltip no Editar (Q18 confirmada) */
+.tooltip-pop {
+  position: absolute; z-index: 60; width: 280px; background: var(--bg-page);
+  border: 1px solid var(--color-border); border-radius: 4px; box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  padding: 14px 16px; font-size: 0.8125rem; display: none;
+}
+.tooltip-pop.show { display: block; }
+.tooltip-pop h4 { margin: 0 0 8px; font-size: 0.875rem; }
+.tooltip-pop ol { margin: 0 0 10px; padding-left: 20px; }
+.tooltip-pop ol li { margin-bottom: 4px; }
+.tooltip-pop .close { position: absolute; top: 6px; right: 8px; border: none; background: none; cursor: pointer; font-size: 16px; color: var(--color-subtle); }
+.tooltip-pop::before { content: ""; position: absolute; top: -8px; right: 24px; border: 8px solid transparent; border-top: none; border-bottom-color: var(--color-border); }
+
+/* Banner de onboarding — visitante novo */
+.onboarding {
+  display: flex; align-items: center; gap: 12px; background: #eaf3ff; border: 1px solid #a6c8ff;
+  border-radius: 4px; padding: 12px 16px; margin: 8px 0 16px; font-size: 0.8125rem;
+}
+.onboarding .ico { font-size: 22px; }
+.onboarding .txt { flex: 1; }
+.onboarding .txt strong { display: block; }
+.onboarding button { white-space: nowrap; }
+.onboarding .dismiss { border: none; background: none; cursor: pointer; color: var(--color-subtle); font-size: 16px; }
+
+/* FAB de ajuda "?" persistente */
+.fab-help {
+  position: fixed; right: 24px; bottom: 24px; width: 48px; height: 48px; border-radius: 50%;
+  background: var(--color-progressive); color: #fff; border: none; font-size: 24px; cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25); z-index: 70;
+}
+.fab-help:hover { background: var(--color-progressive-hover); }
+.fab-panel {
+  position: fixed; right: 24px; bottom: 84px; width: 300px; background: var(--bg-page);
+  border: 1px solid var(--color-border); border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  padding: 16px; z-index: 70; display: none;
+}
+.fab-panel.show { display: block; }
+.fab-panel h4 { margin: 0 0 8px; }
+.fab-panel ul { margin: 0; padding-left: 18px; }
+.fab-panel li { margin-bottom: 6px; }
+
+/* Toggle de perfil (demo da entrevista — alterna logado/deslogado) */
+.profile-toggle {
+  display: flex; align-items: center; gap: 8px; font-size: 12px; background: #fffbe6;
+  border: 1px dashed #d4b106; border-radius: 4px; padding: 6px 10px; margin-left: auto;
+}
+
+/* badge de proteção S1.1 */
+.protect-note { font-size: 0.75rem; color: var(--color-subtle); display: inline-flex; align-items: center; gap: 4px; }
+
+@media (max-width: 800px) {
+  .vec-sidebar { display: none; }
+  .vec-content { padding: 12px 16px 64px; }
+  .infobox { float: none; width: auto; margin: 0 0 16px; }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discussão:Madonna – Wikipédia</title>
+<link rel="stylesheet" href="css/wikipedia.css">
+<style>
+  /* S3.2: threads com hierarquia e avatares */
+  .thread { border: 1px solid var(--color-border-subtle); border-radius: 4px; margin-bottom: 16px; }
+  .thread-head { background: var(--bg-subtle); padding: 8px 12px; font-family: var(--font-serif); font-size: 1.05rem; border-bottom: 1px solid var(--color-border-subtle); }
+  .post { display: flex; gap: 10px; padding: 12px; }
+  .post.reply { margin-left: 28px; border-left: 2px solid var(--bg-interactive); }
+  .post.reply.deep { margin-left: 56px; }
+  .avatar { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; color: #fff; font-weight: bold; font-size: 13px; }
+  .post .meta { font-size: 0.75rem; color: var(--color-subtle); margin-bottom: 2px; }
+  .post .meta b { color: var(--color-base); }
+  .post .body { font-size: 0.8125rem; }
+  .reply-link { font-size: 0.75rem; color: var(--color-link); cursor: pointer; }
+  .cta-topic { margin: 8px 0 20px; }
+  .boiler { border: 1px solid #a6c8ff; background: #eaf3ff; border-radius: 4px; margin-bottom: 16px; }
+  .boiler-toggle { width: 100%; text-align: left; background: none; border: none; padding: 10px 14px; cursor: pointer; font-size: 0.8125rem; display: flex; gap: 8px; align-items: center; }
+  .boiler-body { padding: 0 14px 14px 34px; font-size: 0.8125rem; color: var(--color-subtle); }
+  .boiler-body ul { margin: 0; padding-left: 18px; }
+</style>
+</head>
+<body>
+
+<header class="vec-header">
+  <button class="menu-btn" title="Menu principal">☰</button>
+  <div class="vec-logo">
+    <div class="globe">W</div>
+    <div class="wordmark">WIKIPÉDIA<small>A enciclopédia livre</small></div>
+  </div>
+  <div class="vec-search"><span class="icon">🔍</span><input type="text" placeholder="Buscar na Wikipédia"></div>
+  <div class="auth"><a href="#">Criar conta</a><a href="#">Entrar</a></div>
+</header>
+
+<div class="vec-body">
+  <nav class="vec-sidebar">
+    <h3>Navegação</h3>
+    <ul><li><a href="#">Página principal</a></li><li><a href="#">Página aleatória</a></li></ul>
+    <h3>Colaboração</h3>
+    <ul><li><a href="ajuda.html">Ajuda</a></li></ul>
+  </nav>
+
+  <main class="vec-content">
+    <!-- Breadcrumb também aqui (consistência da S2.1) -->
+    <nav class="breadcrumb">
+      <a href="#">Início</a><span class="sep">›</span>
+      <a href="#">Cultura</a><span class="sep">›</span>
+      <a href="#">Música</a><span class="sep">›</span>
+      <a href="artigo.html">Madonna</a><span class="sep">›</span>
+      <span class="here">Discussão</span>
+    </nav>
+
+    <div class="vec-tabs">
+      <div class="ns">
+        <a class="vec-tab" href="artigo.html">Artigo</a>
+        <button class="vec-tab active">Discussão</button>
+      </div>
+    </div>
+
+    <h1 class="vec-title">Discussão:Madonna</h1>
+    <p class="vec-subtitle">Espaço para coordenar melhorias no artigo.</p>
+
+    <!-- S3.2: boilerplate institucional COLAPSADO por padrão -->
+    <div class="boiler">
+      <button class="boiler-toggle" id="boilerToggle">
+        <span class="chev">▸</span> <strong>Regras e boas práticas desta página</strong> (clique para abrir)
+      </button>
+      <div class="boiler-body" id="boilerBody" style="display:none;">
+        <ul>
+          <li>Esta é a página de discussão para melhorias no artigo Madonna — não é um fórum.</li>
+          <li>Assine os comentários com <code>~~~~</code> e mantenha o tom cordial.</li>
+          <li>Coloque novos tópicos no final da página.</li>
+          <li>Presuma boa-fé e cite fontes confiáveis ao propor mudanças.</li>
+          <li>Conteúdo difamatório ou sem fonte pode ser removido.</li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="btn btn-primary cta-topic">+ Adicionar tópico</button>
+
+    <!-- Threads com hierarquia visual -->
+    <div class="thread">
+      <div class="thread-head">Data de nascimento divergente</div>
+      <div class="post">
+        <div class="avatar" style="background:#3366cc;">RC</div>
+        <div>
+          <div class="meta"><b>RafaelC</b> · 12 jun 2026, 14:02</div>
+          <div class="body">A infobox diz 1958, mas a seção de biografia cita 1959. Qual fonte está correta?</div>
+          <span class="reply-link">↳ Responder</span>
+        </div>
+      </div>
+      <div class="post reply">
+        <div class="avatar" style="background:#795cb2;">MA</div>
+        <div>
+          <div class="meta"><b>MariaA</b> · 12 jun 2026, 15:30</div>
+          <div class="body">A certidão e a Britannica confirmam 1958. Vou corrigir a biografia.</div>
+          <span class="reply-link">↳ Responder</span>
+        </div>
+      </div>
+      <div class="post reply deep">
+        <div class="avatar" style="background:#14866d;">RC</div>
+        <div>
+          <div class="meta"><b>RafaelC</b> · 12 jun 2026, 16:10</div>
+          <div class="body">Perfeito, obrigado. Adicionei a referência da Britannica.</div>
+          <span class="reply-link">↳ Responder</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread">
+      <div class="thread-head">Foto da infobox desatualizada</div>
+      <div class="post">
+        <div class="avatar" style="background:#b32424;">JP</div>
+        <div>
+          <div class="meta"><b>JoaoP</b> · 10 jun 2026, 09:48</div>
+          <div class="body">A imagem é de 2008. Existe alguma com licença livre mais recente no Commons?</div>
+          <span class="reply-link">↳ Responder</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- sidebar técnica REMOVIDA no redesign -->
+  </main>
+</div>
+
+<button class="fab-help" id="fabHelp" title="Ajuda">?</button>
+<div class="fab-panel" id="fabPanel">
+  <h4>Precisa de ajuda?</h4>
+  <ul>
+    <li><a href="ajuda.html">Como participar de uma discussão</a></li>
+    <li><a href="ajuda.html">Como assinar comentários</a></li>
+    <li><a href="artigo.html">Voltar ao artigo</a></li>
+  </ul>
+</div>
+
+<script src="js/prototipo.js"></script>
+</body>
+</html>
