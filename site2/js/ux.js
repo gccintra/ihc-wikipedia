@@ -19,15 +19,10 @@
 
   // ---------- Controles de leitura (tema / fonte / largura / foco) ----------
   var scale = parseFloat(pref('scale')) || 1;
-  // Largura da coluna de texto em "em" (níveis: 45 a 100, passo 7, padrão 60)
-  var WIDTH_MIN = 45, WIDTH_MAX = 100, WIDTH_STEP = 7;
-  var width = parseFloat(pref('width-em')) || 60;
   function applyScale() { body.style.setProperty('--reader-scale', scale); }
-  function applyWidth() { body.style.setProperty('--reader-width', width + 'em'); }
   function applyPrefs() {
     body.classList.toggle('theme-dark', pref('theme') === 'dark');
     applyScale();
-    applyWidth();
     syncButtons();
   }
   function syncButtons() {
@@ -45,8 +40,6 @@
       else if (act === 'reading') { body.classList.toggle('reading-mode'); }
       else if (act === 'font-inc') { scale = Math.min(1.5, scale + 0.1); pref('scale', scale); applyScale(); }
       else if (act === 'font-dec') { scale = Math.max(0.8, scale - 0.1); pref('scale', scale); applyScale(); }
-      else if (act === 'width-inc') { width = Math.min(WIDTH_MAX, width + WIDTH_STEP); pref('width-em', width); applyWidth(); }
-      else if (act === 'width-dec') { width = Math.max(WIDTH_MIN, width - WIDTH_STEP); pref('width-em', width); applyWidth(); }
       syncButtons();
       if (window.WIKITELE) window.WIKITELE.log('leitura', { acao: act });
     });
